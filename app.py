@@ -2,6 +2,27 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import geopandas as gpd
+import plotly.express as px
+
+Plants = pd.read_excel('Plants_Plot_Data.xlsx', sheet_name='PlotData')
+Plants.head(2)
+
+import plotly.express as px
+
+beer_fig = px.scatter_geo(Plants, 
+#                      locations="iso_alpha",
+                    lon = Plants['long'],
+                    lat = Plants['lat'],
+                    color="type", # which column to use to set the color of markers
+                    hover_name="name", # column added to hover information
+                    size="capacity", # size of markers
+                    projection="natural earth")
+
+fig.show()
 
 ########### Define your variables
 beers=['Changed Stout', 'Snake Dog IPA', 'Imperial Porter', 'Does this work Dog IPA']
@@ -37,7 +58,7 @@ beer_layout = go.Layout(
     title = mytitle
 )
 
-beer_fig = go.Figure(data=beer_data, layout=beer_layout)
+#beer_fig = go.Figure(data=beer_data, layout=beer_layout)
 
 
 ########### Initiate the app
