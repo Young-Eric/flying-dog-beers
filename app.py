@@ -22,7 +22,6 @@ beer_fig = px.scatter_geo(Plants,
                     size="capacity", # size of markers
                     projection="natural earth")
 
-fig.show()
 
 ########### Define your variables
 beers=['Changed Stout', 'Snake Dog IPA', 'Imperial Porter', 'Does this work Dog IPA']
