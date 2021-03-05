@@ -30,7 +30,7 @@ app.title='NickelRefineries'
 
 ########### Set up the layout
 app.layout = html.Div(children=[
-    html.H1('Refine'),
+    html.H1('Global Nickel Processors by Location and Capacity. \Click on legend item to remove process type, \double click to isolate process type'),
     dcc.Graph(
         id='flyingdog',
         figure=Refine_fig
